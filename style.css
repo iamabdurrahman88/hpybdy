@@ -119,6 +119,7 @@ svg {
   overflow-y: auto;
   box-sizing: border-box;
   text-align: center;
+  width: 100%;
 }
 
 /* ===== TEXT ===== */
@@ -136,20 +137,48 @@ svg {
 
 /* ===== GALLERY ===== */
 .memory-gallery {
-  max-width: 420px;
+  max-width: 630px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 25px;
+  justify-content: center;
+
 }
 
 /* ===== PHOTO CARD ===== */
 .memory-card {
+  /* width: 100%; */
   background: rgba(255, 255, 255, 0.85);
   border-radius: 22px;
   padding: 14px;
   box-shadow: 0 12px 25px rgba(255, 105, 180, 0.25);
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+
 }
+
+.memory-card:hover .txt{
+  bottom: 0;
+}
+
+
+.txt {
+  position: absolute;
+  bottom: -96%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+
+  padding: 0.5rem;
+  transition: bottom 0.4s cubic-bezier(0.68,-0.55,0.27,1.55);
+}
+
+
+
 
 .memory-card img {
   width: 100%;
@@ -157,11 +186,13 @@ svg {
   margin-bottom: 10px;
 }
 
+
+
 .memory-card p {
+  margin: 1rem;
   font-size: 1rem;
   color: #ff4f91;
 }
-
 
 
 
@@ -200,4 +231,3 @@ p{
     font-size: 1.5rem;
     font-weight: bold;
 }
-
