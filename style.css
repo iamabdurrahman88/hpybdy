@@ -1,12 +1,13 @@
 
 body {
   margin: 2%;
-  background: #ff9a9e;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .screen {
