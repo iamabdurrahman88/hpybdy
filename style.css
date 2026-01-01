@@ -10,6 +10,11 @@ body {
   min-height: 100vh;
 }
 
+*{
+  -webkit-tap-highlight-color: transparent
+
+}
+
 .screen {
   text-align: center;
   color: #fff;
@@ -120,6 +125,7 @@ svg {
   box-sizing: border-box;
   text-align: center;
   width: 100%;
+
 }
 
 /* ===== TEXT ===== */
@@ -127,6 +133,8 @@ svg {
   font-size: 2.5rem;
   color: #ff5fa2;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .gallery-subtitle {
@@ -143,6 +151,7 @@ svg {
   flex-direction: column;
   gap: 25px;
   justify-content: center;
+  align-items: center;
 
 }
 
@@ -230,4 +239,39 @@ svg {
 p{
     font-size: 1.5rem;
     font-weight: bold;
+  }
+p1{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+
+.floating-music {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.music-note {
+  position: absolute;
+  bottom: -20px;
+  font-size: 22px;
+  opacity: 0.6;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
 }
