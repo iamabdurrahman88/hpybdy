@@ -248,3 +248,24 @@ function createMusicNote() {
 // spawn notes continuously
 setInterval(createMusicNote, 900);
 
+
+
+
+
+
+
+let started = false;
+let noteTimer = null;
+
+function startExperience() {
+  if (started) return;
+  started = true;
+
+  // MUSIC
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.4;
+  music.play(); // must be here
+
+  // FLOATING NOTES (must be here)
+  noteTimer = setInterval(createMusicNote, 900);
+}
