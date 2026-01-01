@@ -14,6 +14,8 @@ const cutesywords = [
 cakeBox.addEventListener("click", () => {
   cakeBox.classList.add("cut");
   confetti();
+  startMusicOnce();
+
 
   setTimeout(() => {
     screen1.classList.add("hidden");
@@ -205,8 +207,7 @@ function startMusicOnce() {
 }
 
 // start music on first interaction anywhere
-document.addEventListener("click", startMusicOnce);
-document.addEventListener("touchstart", startMusicOnce);
+
 
 function startMusicOnce() {
   if (!musicStarted) {
