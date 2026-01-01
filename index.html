@@ -12,6 +12,8 @@
 </head>
 
 <body>
+<div class="floating-music"></div>
+
 
 <div class="floating-words-global"></div>
 
@@ -48,41 +50,39 @@
 
 
 <!-- SCREEN 3 -->
-<div class="screen hidden" id="screen3" 
+<div class="screen hidden" id="screen3">
   <h2>Catch the hearts 💖</h2>
-<p>Score: <span id="score">0</span> / 5</p>
+  <p>Score: <span id="score">0</span> / 5</p>
 
-<div id="gameArea" style="
+  <div id="gameArea" style="
   width: 300px;
   height: 300px;
   margin: 10px auto;
   border: 2px dashed white;
   border-radius: 20px;
   position: relative;
-">
-</div>
+  ">
+  </div>
 
-<p id="winMsg" class="hidden">You won my heart 🥹💘</p>
+  <p id="winMsg" class="hidden">You won my heart 🥹💘</p>
 
-<button id="toScreen4" class="hidden" onclick="goToScreen4()" style="width: 250px;
-    height: 50px;
-    border: 0;
-    border-radius: 25px;
-    background-color: #FFB6C1;
-    color: #000;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: bold;
-    box-shadow: #000 0px 2px 3px -1px, #000 0px 1px 2px -1px;">Next →</button>
-
-
+  <button id="toScreen4" class="hidden" onclick="goToScreen4()" style="width: 250px;
+      height: 50px;
+      border: 0;
+      border-radius: 25px;
+      background-color: #FFB6C1;
+      color: #000;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: bold;
+      box-shadow: #000 0px 2px 3px -1px, #000 0px 1px 2px -1px;">Next →</button>
 
 </div>
 
 <!-- SCREEN 4 -->
 <div class="screen1 hidden" id="screen4">
-<div class="memory-gallery">
+  <div class="memory-gallery">
 
   <div class="memory-card">
     <img src="pics/1.jpeg" />
@@ -163,6 +163,7 @@
     <div class="txt">
       <h3>Loving you has taught me what real happiness feels like</h3>
       <p>It’s not about perfection — it’s about warmth, trust, and the way you make everything feel complete. My heart feels safe with you, and that means everything to me.</p>
+    </div>
   </div>
 
   <div class="memory-card">
@@ -172,14 +173,16 @@
       <p>you are someone I’m thankful for. Your existence makes my life richer, softer, and full of meaning. I promise to cherish you, respect you, and love you in all the quiet ways that truly matter.<p>
   </div>
 
-</div>
-<p>ek aurr baar ?</p>
-    <button onclick="goToScreen1()" class="btn">hmm </button>
 
-</div>
-
+  </div>
+  <p1>ek aurr baar ?</p1>
+  <button id="toScreen1" onclick="goToScreen1()" class="btn">hmm </button>
 
 
+
+<audio id="bgMusic" loop>
+  <source src="bgm.mpeg" type="audio/mpeg">
+</audio>
 
 
 
