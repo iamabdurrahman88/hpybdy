@@ -112,8 +112,9 @@ function goToScreen4() {
   document.body.style.overflow = "auto";
   document.documentElement.style.overflow = "auto";
   window.scrollTo(0, 0);
+  document.getElementById("toScreen4").classList.remove("hidden");
 
-  startFloatingWords();
+
 
 }
 
@@ -183,4 +184,66 @@ function startGlobalFloatingWords(){
 window.onload = function(){
   startGlobalFloatingWords();
 };
+
+
+
+
+
+
+
+
+
+const bgMusic = document.getElementById("bgMusic");
+let musicStarted = false;
+
+function startMusicOnce() {
+  if (!musicStarted) {
+    bgMusic.volume = 0.4; // soft romantic
+    bgMusic.play().catch(() => {});
+    musicStarted = true;
+  }
+}
+
+// start music on first interaction anywhere
+document.addEventListener("click", startMusicOnce);
+document.addEventListener("touchstart", startMusicOnce);
+
+function startMusicOnce() {
+  if (!musicStarted) {
+    bgMusic.volume = 0;
+    bgMusic.play().catch(() => {});
+    let v = 0;
+    const fade = setInterval(() => {
+      if (v < 0.4) {
+        v += 0.02;
+        bgMusic.volume = v;
+      } else {
+        clearInterval(fade);
+      }
+    }, 150);
+    musicStarted = true;
+  }
+}
+
+const musicContainer = document.querySelector(".floating-music");
+const notes = ["🎵", "🎶", "🎼", "💖"];
+
+function createMusicNote() {
+  const note = document.createElement("div");
+  note.className = "music-note";
+  note.innerText = notes[Math.floor(Math.random() * notes.length)];
+
+  note.style.left = Math.random() * 100 + "vw";
+  note.style.fontSize = 16 + Math.random() * 14 + "px";
+  note.style.animationDuration = 6 + Math.random() * 6 + "s";
+
+  musicContainer.appendChild(note);
+
+  setTimeout(() => {
+    note.remove();
+  }, 12000);
+}
+
+// spawn notes continuously
+setInterval(createMusicNote, 900);
 
